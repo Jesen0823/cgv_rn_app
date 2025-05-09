@@ -105,15 +105,34 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    //packagingOptions{
+    //    pickFirst "lib/arm64-v8a/librealm-jni.so"
+    //}
+    //configurations.all{
+    //    resolutionStrategy{
+    //        force "com.facebook.soloader:soloader:0.8.2"
+    //        force 'org.webkit:android-jsc:+'
+    //    }
+    //}
+
 }
+def useIntlJsc = true
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation "com.facebook.react:react-native:+"  // From node_modules
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
+    if(useIntlJsc){
+        implementation 'org.webkit:android-jsc-intl:+'
+    }else{
+        implementation 'org.webkit:android-jsc:+'
+        
+    }
+    implementation 'org.webkit:android-jsc-cppruntime:+'
 }
