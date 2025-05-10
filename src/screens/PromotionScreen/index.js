@@ -1,0 +1,3 @@
+const PromotionScreen = ({navigation: {navigate}}) => {
+
+}

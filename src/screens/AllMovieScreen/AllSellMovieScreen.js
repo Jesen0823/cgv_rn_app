@@ -1,0 +1,3 @@
+const AllSellMovieScreen = ({navigation}) => {
+    
+}
