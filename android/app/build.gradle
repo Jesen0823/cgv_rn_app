@@ -114,8 +114,14 @@ android {
     //        force 'org.webkit:android-jsc:+'
     //    }
     //}
-
 }
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'EvilIcons.ttf', 'MaterialIcons.ttf' ] // 需要使用的字体文件
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 def useIntlJsc = true
 
 dependencies {
@@ -135,4 +141,14 @@ dependencies {
         
     }
     implementation 'org.webkit:android-jsc-cppruntime:+'
+    implementation project(':react-native-vector-icons')
+}
+
+// 在文件末尾添加以下内容
+project.afterEvaluate {
+    react {
+        entryFile = file("index.js")
+    }
+    // 添加字体复制任务
+    //apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 }

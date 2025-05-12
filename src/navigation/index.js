@@ -7,6 +7,7 @@ import ExceptionScreen from '../screens/ExceptionScreen'
 import {navigationRef} from '../utils';
 import AlertScreen from "./AlertScreen";
 import {StatusBar} from "react-native";
+//import {Ionicons} from 'react-native-vector-icons/Ionicons'; 
 
 const RootStack = createStackNavigator();
 
