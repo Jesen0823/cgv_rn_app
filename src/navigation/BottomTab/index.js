@@ -1,4 +1,4 @@
-import * as Rect from 'react';
+import * as React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TouchableOpacity,Image } from 'react-native';
 import tabImage from '../../assets/images/tabs';
@@ -9,7 +9,7 @@ import ShopScreen from '../../screens/ShopScreen';
 import MineScreen from '../../screens/MineScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import AllSellMovieScreen from '../../screens/AllMovieScreen/AllSellMovieScreen';
-import AllSoonMovieScreen from '../../screens/AllSoonMovieScreen/AllSoonSellMovieScreen';
+import AllSoonMovieScreen from '../../screens/AllSoonMovieScreen/AllSoonMovieScreen';
 /**
  * @format
  */
